@@ -9,13 +9,12 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
         if(mobile.length !== 11)  return
 
         const { response, error } = await sendOtp(mobile)
-        console.log( response, error);
-
-        // if(response) {
-        //     setStep(2)
-        // } else {
-        //     console.log(error.response.data.message);
-        // }
+    
+        if(response) {
+            setStep(2)
+        } else {
+            console.log(error.response.data.message);
+        }
 
     }
     return (
