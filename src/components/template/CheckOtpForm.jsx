@@ -1,5 +1,5 @@
 import { checkOtp } from "../../services/auth"
-import { setCookie } from "../../utils/setCookie"
+import { setCookie } from "../../utils/cookies"
 
 
 
