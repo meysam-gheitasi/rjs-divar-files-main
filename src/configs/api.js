@@ -27,7 +27,6 @@ api.interceptors.response.use((response) => {
             const res = await getNewToken()
             if(!res?.response) return 
             setCookie(res.response.data)
-            console.log('this is new LOG:', api());
             return api(orginalRequest)
         }
     })
