@@ -6,7 +6,7 @@ import NotfoundPage from "pages/404";
 import DashboardPage from "pages/DashboardPage";
 import { useQuery } from "@tanstack/react-query";
 import { getProfile } from "src/services/user";
-import Loader from "src/components/template/modules/Loader";
+import Loader from "src/components/modules/Loader";
 
 function Router() {
     const { data, isLoading, error } = useQuery(["profile"], getProfile)
