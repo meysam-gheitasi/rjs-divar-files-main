@@ -11,7 +11,8 @@ const paths = [
   'router',
   'services',
   'styles',
-  'utols'
+  'utils',
+  'layouts',
 ]
 
 // https://vitejs.dev/config/
