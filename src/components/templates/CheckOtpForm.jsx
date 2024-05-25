@@ -4,7 +4,7 @@ import { setCookie } from "../../utils/cookies"
 import { useQuery } from "@tanstack/react-query"
 import { getProfile } from "src/services/user"
 
-
+import styles from './CheckOtpForm.module.css'
 
 
 function CheckOtpForm({ code, setCode, mobile, setStep }) {

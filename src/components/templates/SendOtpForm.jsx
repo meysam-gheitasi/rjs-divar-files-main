@@ -1,4 +1,5 @@
 import { sendOtp } from "../../services/auth"
+import styles from './SendOtpForm.module.css'
 
 function SendOtpForm({ mobile, setMobile, setStep }) {
 
@@ -18,7 +19,7 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
 
     }
     return (
-            <div className="log-modal">
+            <div className="log-modal" >
                 <header className="log-modal_header">
                     <div className="log-modal_title-box">ورود به حساب کاربری</div>
                     <button className="log-modal_close-button">icon</button>
