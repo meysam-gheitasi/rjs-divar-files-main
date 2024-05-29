@@ -7,7 +7,7 @@ function Layout({ children }) {
     return (
         <>
             <Header />
-            <div className={styles.childern}>
+            <div className={styles.children}>
                 {children}
             </div>
             <Footer />
