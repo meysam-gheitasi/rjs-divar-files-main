@@ -9,8 +9,7 @@ import { getProfile } from "src/services/user";
 import Loader from "src/components/modules/Loader";
 
 function Router() {
-    const { data, isLoading, error } = useQuery(["profile"], getProfile)
-    console.log(data, isLoading, error)
+    const { data, isLoading } = useQuery(["profile"], getProfile)
 
     if (isLoading) return <Loader />
     return (
