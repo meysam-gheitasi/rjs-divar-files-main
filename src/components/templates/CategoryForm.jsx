@@ -18,7 +18,7 @@ function CategoryForm() {
     const submitHandler = (e) => {
         e.preventDefault()
         if (!form.name || !form.slug || !form.icon) return
-            mutate(form);
+        mutate(form);
     }
 
     return (
@@ -32,7 +32,7 @@ function CategoryForm() {
                 <input type="text" name="slug" id="slug" placeholder="" />
                 <label htmlFor="icon">ایکون دسته بندی</label>
                 <input type="text" name="icon" id="icon" placeholder="" />
-                <button onSubmit={submitHandler}></button>
+                <button onSubmit={submitHandler} disabled={isLoading}></button>
             </form>
         </div>
     )
