@@ -1,7 +1,10 @@
+import AddForm from "src/components/templates/AddForm"
 
 function DashboardPage() {
   return (
-    <div>DashboardPage</div>
+    <div>
+      <AddForm />
+    </div>
   )
 }
 
