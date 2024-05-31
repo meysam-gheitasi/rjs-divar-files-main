@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query"
+import axios from "axios"
 import { useState } from "react"
 
 import { getCategories } from "src/services/admin"
+import { getCookie } from "src/utils/cookies"
 
 function AddForm() {
 
-    const [form, setForm] = useState({ title: '', description: '', amount: null, city: '', category: '', image: null })
+    const [form, setForm] = useState({ title: '', content: '', amount: null, city: '', category: '', images: null })
 
     const { data, isLoading } = useQuery(['get-categories'], getCategories)
 
@@ -13,7 +15,7 @@ function AddForm() {
 
         const name = e.target.name
 
-        if (name !== 'image') {
+        if (name !== 'images') {
             setForm({ ...form, [name]: e.target.value })
         } else {
             setForm({ ...form, [name]: e.target.files[0] })
@@ -21,8 +23,26 @@ function AddForm() {
     }
 
     const submitHandler = e => {
+
         e.preventDefault()
-        console.log(form);
+
+        const formData = new FormData()
+        for (let i in form) {
+            console.log(i, form[i])
+           formData.append(i, form[i])
+        }
+
+        const accessToken = getCookie('accessToken')
+
+        axios
+        .post(`${import.meta.env.VITE_BASE_URL}post/create`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                Authorization: `bearer ${accessToken}`
+            }
+        })
+            .then(res => console.log(res))
+            .catch(error => console.log(error))
     }
 
     return (
@@ -31,10 +51,10 @@ function AddForm() {
                 <h3>افزودن آگهی</h3>
                 <label htmlFor="title">عنوان</label>
                 <input type="text" name="title" id="title" />
-                <label htmlFor="description"></label>
-                <textarea name="description" id="description" rows={10} cols={30} />
+                <label htmlFor="content"></label>
+                <textarea name="content" id="content" rows={10} cols={30} />
                 <label htmlFor="amount">قیمت</label>
-                <input type="text" name="amount" id="amount" />
+                <input type="number" name="amount" id="amount" />
                 <label htmlFor="city">شهر</label>
                 <input type="text" name="city" id="city" />
                 <select name="category" id="category">
@@ -42,8 +62,8 @@ function AddForm() {
                         {item.name}
                     </option>)}
                 </select>
-                <label htmlFor="image">عکس</label>
-                <input type="file" name="image" id="image" />
+                <label htmlFor="images">عکس</label>
+                <input type="file" name="images" id="images" />
                 <button onSubmit={submitHandler}>ایجاد</button>
             </form>
         </div>
