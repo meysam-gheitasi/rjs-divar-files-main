@@ -1,19 +1,35 @@
 import { useQuery } from "@tanstack/react-query"
+import { useState } from "react"
 
 import { getCategories } from "src/services/admin"
 
 function AddForm() {
 
+    const [form, setForm] = useState({ title: '', description: '', amount: null, city: '', category: '', image: null })
+
     const { data, isLoading } = useQuery(['get-categories'], getCategories)
+
+    const changeHandler = e => {
+
+        const name = e.target.name
+
+        if (name !== 'image') {
+            setForm({ ...form, [name]: e.target.value })
+        } else {
+            setForm({ ...form, [name]: e.target.files[0] })
+        }
+
+        console.log(form);
+    }
 
     const submitHandler = e => {
         e.preventDefault()
-        console.log('send');
+        console.log(form);
     }
 
     return (
         <div>
-            <form onSubmit={submitHandler}>
+            <form onSubmit={submitHandler} onChange={changeHandler}>
                 <h3>افزودن آگهی</h3>
                 <label htmlFor="title">عنوان</label>
                 <input type="text" name="title" id="title" />
