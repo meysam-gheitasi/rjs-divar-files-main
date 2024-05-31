@@ -36,7 +36,7 @@ function CategoryForm() {
                 <input type="text" name="slug" id="slug" placeholder="" />
                 <label htmlFor="icon">ایکون دسته بندی</label>
                 <input type="text" name="icon" id="icon" placeholder="" />
-                <button onSubmit={submitHandler} disabled={isLoading}></button>
+                <button onSubmit={submitHandler} disabled={isLoading}>ایجاد</button>
             </form>
         </div>
     )
