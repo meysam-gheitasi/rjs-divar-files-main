@@ -18,8 +18,6 @@ function AddForm() {
         } else {
             setForm({ ...form, [name]: e.target.files[0] })
         }
-
-        console.log(form);
     }
 
     const submitHandler = e => {
