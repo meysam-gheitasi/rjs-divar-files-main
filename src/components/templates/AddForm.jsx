@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import { useState } from "react"
+import toast from "react-hot-toast"
 
 import { getCategories } from "src/services/admin"
 import { getCookie } from "src/utils/cookies"
@@ -41,8 +42,8 @@ function AddForm() {
                 Authorization: `bearer ${accessToken}`
             }
         })
-            .then(res => console.log(res))
-            .catch(error => console.log(error))
+            .then(res => toast(res.data.messege) )
+            .catch(error => toast('مشکلی پیش امده است!'))
     }
 
     return (
