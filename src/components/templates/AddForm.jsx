@@ -42,8 +42,8 @@ function AddForm() {
                 Authorization: `bearer ${accessToken}`
             }
         })
-            .then(res => toast(res.data.messege) )
-            .catch(error => toast('مشکلی پیش امده است!'))
+            .then(res => toast(res.data.message) )
+            .catch(error => toast('!مشکلی پیش امده است!'))
     }
 
     return (
