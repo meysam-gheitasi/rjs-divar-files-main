@@ -24,9 +24,12 @@ function PostList() {
                       <img src={`${baseURL}${item.images[0]}`} alt="" />
                     )}
                     <div>
-                      
                         <p>{item.options?.title}</p>
-                      
+                        <span>{item.options?.content}</span>
+                    </div>
+                    <div>
+                      <p>{item.createdAt}</p>
+                      <span>{item.amount} تومان</span>
                     </div>
                   </div>
                 ))
