@@ -1,3 +1,4 @@
+import { p2e } from "src/utils/nombers"
 import { sendOtp } from "../../services/auth"
 import styles from './SendOtpForm.module.css'
 
@@ -31,7 +32,7 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
                             <p className={styles.authContentMessage}>برای استفاده از امکانات دیوار، لطفاً شمارهٔ موبایل خود را وارد کنید. کد تأیید به این شماره پیامک خواهد شد.</p>
                             <form onSubmit={submitHandler} className={styles.form}>
                                 <div className={styles.formInput}>
-                                <input type="number" id="inputNumber" placeholder="شماره موبایل" value={mobile} onChange={e => setMobile(e.target.value)} />
+                                <input type="number" id="inputNumber" placeholder="شماره موبایل" value={mobile} onChange={e => setMobile(p2e(e.target.value))} />
                                 <p>+98</p>
                                 </div>
                                 <label htmlFor="inputNumber"><a href="">شرایط استفاده از خدمات</a> و <a href="/">حریم خصوصی</a> دیوار را می‌پذیرم.</label>
