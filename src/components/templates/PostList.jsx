@@ -28,7 +28,7 @@ function PostList() {
                         <span>{item.options?.content}</span>
                     </div>
                     <div>
-                      <p>{item.createdAt}</p>
+                      <p>{new Date(item.createdAt).toLocaleDateString("fa-Ir")}</p>
                       <span>{item.amount} تومان</span>
                     </div>
                   </div>
