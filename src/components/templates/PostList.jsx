@@ -18,15 +18,15 @@ function PostList() {
             <>
               <h3>آگهی های شما</h3>
               {
-                data?.data?.posts?.map((item) => (
+                data.data.posts.map((item) => (
                   <div key={item._id}>
                     {item.images?.[0] && (
                       <img src={`${baseURL}${item.images[0]}`} alt="" />
                     )}
                     <div>
-                      {item.options?.title && (
-                        <p>{item.options.title}</p>
-                      )}
+                      
+                        <p>{item.options?.title}</p>
+                      
                     </div>
                   </div>
                 ))
