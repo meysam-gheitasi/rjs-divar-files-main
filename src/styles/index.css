@@ -5,10 +5,10 @@
 }
 
 body {
-  margin: auto;
+  margin: 0;
   max-width: 1400px;
   min-height: 100vh;
-  padding: 10px;
+  padding: 0;
 }
 
 * {
