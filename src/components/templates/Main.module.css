@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: calc(100% - 200px);
+    margin-top: 20px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    width: 330px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 10px;
+}
+
+.card img {
+    width: 150px;
+    height: 130px;
+    border-radius: 3px;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.body div {
+    font-size: .9rem;color: gray;
+}
