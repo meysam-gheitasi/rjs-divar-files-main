@@ -12,8 +12,6 @@ function HomePage() {
   const { data: categories, isLoading: categoriesLoading } = useQuery(['get-categories'], getCategories)
   const { data: allPosts, isLoading: postsLoading } = useQuery(['get-all-posts'], getAllPosts)
 
-
-
   return (
     <>
       {categoriesLoading || postsLoading 
