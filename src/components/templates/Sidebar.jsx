@@ -4,19 +4,25 @@ import styles from './Sidebar.module.css'
 
 function Sidebar() {
 
-    const { data } = useQuery(['get-categories'], getCategories)
+    const { data, isLoading } = useQuery(['get-categories'], getCategories)
 
-  return (
+    return (
         <div className={styles.sidebar}>
-            <h4>تمام دسته بندی ها</h4>
-           <ul>
-           {data?.data.map(item => (
-                <li key={item._id}>
-                    <img src={`${item.icon}.svg`} alt={`${item.name}`} />
-                    <p>{item.name}</p>
-                </li>
-            ))}
-           </ul>
+            {
+                !isLoading && 
+                    <>
+                        <h4>تمام دسته بندی ها</h4>
+                        <ul>
+                            {data?.data.map(item => (
+                                <li key={item._id}>
+                                    <img src={`${item.icon}.svg`} alt={`${item.name}`} />
+                                    <p>{item.name}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                
+            }
         </div>
     )
 }
