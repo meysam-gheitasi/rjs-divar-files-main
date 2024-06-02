@@ -1,4 +1,5 @@
 import { useState } from "react"
+import styles from './AuthPage.module.css'
 
 import CheckOtpForm from "../components/templates/CheckOtpForm"
 import SendOtpForm from "../components/templates/SendOtpForm"
@@ -8,7 +9,7 @@ function AuthPage() {
     const [mobile, setMobile] = useState('')
     const [code, setCode] = useState('')
   return (
-    <div>
+    <div className={styles.container}>
         {step === 1 && <SendOtpForm setStep={setStep} mobile={mobile} setMobile={setMobile} />}
         {step === 2 && <CheckOtpForm setStep={setStep} mobile={mobile} code= {code} setCode= {setCode}/>}
     </div>
