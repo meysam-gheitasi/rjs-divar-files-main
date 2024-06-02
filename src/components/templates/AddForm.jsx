@@ -10,7 +10,7 @@ function AddForm() {
 
     const [form, setForm] = useState({ title: '', content: '', amount: null, city: '', category: '', images: null })
 
-    const { data, isLoading } = useQuery(['get-categories'], getCategories)
+    const { data } = useQuery(['get-categories'], getCategories)
 
     const changeHandler = e => {
 
@@ -65,7 +65,7 @@ function AddForm() {
                 </select>
                 <label htmlFor="images">عکس</label>
                 <input type="file" name="images" id="images" />
-                <button onSubmit={submitHandler}>ایجاد</button>
+                <button onSubmit={submitHandler} >ایجاد</button>
             </form>
         </div>
     )
