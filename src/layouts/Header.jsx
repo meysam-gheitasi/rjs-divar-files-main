@@ -38,7 +38,7 @@ function Header() {
       <button className={styles.svgIcon}>
         <img src="../public/assets/patch-question.svg" alt="user" />
         <span>
-          چت
+          پشتیبانی
         </span>
       </button>
       <button className={styles.svgIcon}>
