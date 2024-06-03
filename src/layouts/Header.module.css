@@ -29,7 +29,6 @@
 }
 .svgIcon:hover {
     transition:  background-color .5s;
-    cursor: pointer;
     color: inherit;
     background-color:  rgba(0, 0, 0, .04);
 }
@@ -93,5 +92,4 @@
     padding: 8px 12px;
     font-size: .95rem;
     font-weight: 350;
-    cursor: pointer;
 }
