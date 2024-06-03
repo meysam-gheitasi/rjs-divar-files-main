@@ -60,8 +60,8 @@ function Header() {
         </a>
       </button>
       <div className={styles.advertBtn}>
-        <button type="submit" className={styles.formBtn}>
-          <a href="/">
+        <button  className={styles.formBtn}>
+          <a href="/registrationAD">
             ثبت آگهی
           </a>
         </button>
