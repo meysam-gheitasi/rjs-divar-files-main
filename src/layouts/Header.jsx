@@ -60,9 +60,11 @@ function Header() {
         </a>
       </button>
       <div className={styles.advertBtn}>
-        <a href="/">
-          <button type="submit" className={styles.formBtn}>ثبت آگهی</button>
-        </a>
+        <button type="submit" className={styles.formBtn}>
+          <a href="/">
+            ثبت آگهی
+          </a>
+        </button>
       </div>
     </div>
   )
