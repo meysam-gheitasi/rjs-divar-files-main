@@ -8,7 +8,7 @@ function Header() {
       </a>
       <hr />
       <button className={styles.svgIcon}>
-        <a href="/">
+        <a className={styles.notAllowed} href="/">
           <img src="../public/assets/location.svg" alt="location" />
           <span>
             تهران
@@ -36,7 +36,7 @@ function Header() {
         </a>
       </button>
       <button className={styles.svgIcon}>
-        <a href="/">
+        <a className={styles.notAllowed} href="/">
           <img src="../public/assets/chat.svg" alt="user" />
           <span>
             چت
@@ -44,7 +44,7 @@ function Header() {
         </a>
       </button>
       <button className={styles.svgIcon}>
-        <a href="/">
+        <a className={styles.notAllowed} href="/">
           <img src="../public/assets/patch-question.svg" alt="user" />
           <span>
             پشتیبانی
@@ -52,7 +52,7 @@ function Header() {
         </a>
       </button>
       <button className={styles.svgIcon}>
-        <a href="/">
+        <a className={styles.notAllowed} href="/">
           <img src="../public/assets/globe-americas.svg" alt="user" />
           <span>
             Fa
