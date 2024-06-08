@@ -13,8 +13,6 @@ function CategoryForm() {
         onSuccess: () => queryClient.invalidateQueries('get-categories')
     })
 
-    console.log({ data, error, isLoading, isSuccess });
-
     const changeHandler = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
