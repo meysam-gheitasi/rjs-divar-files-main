@@ -1,6 +1,7 @@
 import { useState } from "react"
 import styles from './AuthPage.module.css'
 
+// Components form OTP part
 import CheckOtpForm from "components/templates/CheckOtpForm"
 import SendOtpForm from "components/templates/SendOtpForm"
 
