@@ -15,7 +15,7 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
 
   const sendCode = async (mobile) => {
 
-    const { response, error } = await sendOtp(mobile)
+    const { response } = await sendOtp(mobile)
 
     if (response) {
       toast('کد تایید جدید ارسال شد ')
