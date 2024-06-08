@@ -5,9 +5,14 @@ import CheckOtpForm from "components/templates/CheckOtpForm"
 import SendOtpForm from "components/templates/SendOtpForm"
 
 function AuthPage() {
-  
+
+  // Use to condition of displaying which form
   const [step, setStep] = useState(1)
+
+  // Get users phone number
   const [mobile, setMobile] = useState('')
+
+  // Get OTP code to server
   const [code, setCode] = useState('')
 
   return (
