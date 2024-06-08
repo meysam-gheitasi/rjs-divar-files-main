@@ -30,7 +30,7 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
     // validation cdoe
     if (code.toString().length !== 5) return
 
-    const { response, error } = await checkOtp(mobile, code)
+    const { response } = await checkOtp(mobile, code)
     if (response) {
       toast('ورود با موفقیت انجام شد!')
       setCookie(response.data)
