@@ -1,17 +1,19 @@
 import { useState } from "react"
 import styles from './AuthPage.module.css'
 
-import CheckOtpForm from "../components/templates/CheckOtpForm"
-import SendOtpForm from "../components/templates/SendOtpForm"
+import CheckOtpForm from "components/templates/CheckOtpForm"
+import SendOtpForm from "components/templates/SendOtpForm"
 
 function AuthPage() {
-    const [step, setStep] = useState(1)
-    const [mobile, setMobile] = useState('')
-    const [code, setCode] = useState('')
+  
+  const [step, setStep] = useState(1)
+  const [mobile, setMobile] = useState('')
+  const [code, setCode] = useState('')
+
   return (
     <div className={styles.container}>
-        {step === 1 && <SendOtpForm setStep={setStep} mobile={mobile} setMobile={setMobile} />}
-        {step === 2 && <CheckOtpForm setStep={setStep} mobile={mobile} code= {code} setCode= {setCode}/>}
+      {step === 1 && <SendOtpForm setStep={setStep} mobile={mobile} setMobile={setMobile} />}
+      {step === 2 && <CheckOtpForm setStep={setStep} mobile={mobile} code={code} setCode={setCode} />}
     </div>
   )
 }

@@ -28,7 +28,7 @@ function Header() {
         <img src="../public/assets/search.svg" alt="search" />
       </div>
       <button className={styles.svgIcon}>
-        <a href="/">
+        <a href="/dashboard">
           <img src="../public/assets/user.svg" alt="user" />
           <span>
             دیوار من
