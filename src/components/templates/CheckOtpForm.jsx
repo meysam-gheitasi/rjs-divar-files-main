@@ -42,13 +42,13 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
   }
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={styles.form}>
       <h4>ورود به حساب کاربری</h4>
       <p>کد تأیید را وارد کنید</p>
       <label htmlFor="inputCode">کد پیامک‌شده به شمارۀ {mobile} .را وارد کنید</label>
       <input type="number" id="inputCode" placeholder="کد را وارد کنید" value={code} onChange={e => setCode(e.target.value)} />
       <button onClick={() => setStep(1)}>تغییر شمارهٔ موبایل</button>
-      <button onClick={() => sendCode}>درخواست مجدد کد تایید</button>
+      <button onClick={() => sendCode} className={styles.resindCode}>درخواست مجدد کد تایید</button>
       <button type="submit">ورود</button>
     </form>
   )
