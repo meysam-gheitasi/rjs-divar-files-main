@@ -8,3 +8,9 @@
     border-radius: 5px;
     padding: 30px;
 }
+
+.form p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
