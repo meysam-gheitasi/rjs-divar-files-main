@@ -21,3 +21,9 @@
     border: 1px solid silver;
     border-radius: 5px;
 }
+
+.form span {
+    color: gray;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
