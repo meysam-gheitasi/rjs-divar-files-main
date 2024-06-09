@@ -14,3 +14,10 @@
     font-weight: 400;
     margin-bottom: 20px;
 }
+
+.form input {
+    margin: 10px 0 20px;
+    padding: 5px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
