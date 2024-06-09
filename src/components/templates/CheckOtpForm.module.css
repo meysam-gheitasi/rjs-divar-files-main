@@ -27,3 +27,11 @@
     font-size: 0.8rem;
     margin-bottom: 20px;
 }
+
+.form button {
+    width: 70px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #a62626;
+    cursor: pointer;
+}
