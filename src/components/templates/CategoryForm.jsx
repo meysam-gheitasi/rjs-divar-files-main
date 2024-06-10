@@ -30,6 +30,7 @@ function CategoryForm() {
             {isSuccess && <p>دسته بندی با موفقیت ایجاد شد </p>}
             {!!error && <p>مشکلی پیش آمده است</p>}
             <form onSubmit={submitHandler} onChange={changeHandler} className={styles.form}>
+                <h3>دسته بندی جدید</h3>
                 <label htmlFor="name">نام دسته بندی</label>
                 <input type="text" name="name" id="name" placeholder="" />
                 <label htmlFor="slug">اسلاگ دسته بندی</label>
