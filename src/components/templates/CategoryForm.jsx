@@ -2,6 +2,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useState } from "react"
 import { addCategory } from "src/services/admin"
 
+import styles from './CategoryForm.module.css'
+
 
 function CategoryForm() {
 
@@ -27,7 +29,7 @@ function CategoryForm() {
         <div>
             {isSuccess && <p>دسته بندی با موفقیت ایجاد شد </p>}
             {!!error && <p>مشکلی پیش آمده است</p>}
-            <form onSubmit={submitHandler} onChange={changeHandler}>
+            <form onSubmit={submitHandler} onChange={changeHandler} className={styles.form}>
                 <label htmlFor="name">نام دسته بندی</label>
                 <input type="text" name="name" id="name" placeholder="" />
                 <label htmlFor="slug">اسلاگ دسته بندی</label>
