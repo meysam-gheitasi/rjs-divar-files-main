@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { checkOtp, sendOtp } from "../../services/auth"
+import { checkOtp, sendOtp } from "services/auth"
 import { setCookie } from "../../utils/cookies"
 import { useQuery } from "@tanstack/react-query"
 import { getProfile } from "src/services/user"
@@ -15,7 +15,7 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
 
   const sendCode = async (mobile) => {
 
-    const { response } = await sendOtp(mobile)
+    const { response, error } = await sendOtp(mobile)
 
     if (response) {
       toast('کد تایید جدید ارسال شد ')
@@ -46,7 +46,7 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
       <header className={styles.logModalHeader}>
         <h4 className="log-modal_title-box">ورود به حساب کاربری</h4>
         <button className="log-modal_close-button">
-        <a href="/">X</a>
+          <a href="/">X</a>
         </button>
       </header>
       <div className={styles.logModalContants}>
@@ -61,7 +61,7 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
           <button onClick={() => setStep(1)} className={styles.changePhone}>تغییر شمارهٔ موبایل</button>
         </div>
         <div className={styles.footerBody}>
-          <button onClick={sendCode} className={styles.resindCode}>درخواست مجدد کد تایید</button>
+          <button onClick={() => sendCode(mobile)} className={styles.resindCode}>درخواست مجدد کد تایید</button>
           <button onClick={submitHandler} className={styles.logIn}>ورود</button>        </div>
       </div>
     </di>
