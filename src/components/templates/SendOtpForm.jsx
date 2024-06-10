@@ -25,7 +25,9 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
         <div className={styles.logModal} >
             <header className={styles.logModalHeader}>
                 <div className="log-modal_title-box">ورود به حساب کاربری</div>
-                <button className="log-modal_close-button">X</button>
+                <button className="log-modal_close-button">
+                    <a href="/">X</a>
+                </button>
             </header>
             <div className={styles.logModalContants}>
                 <div className={styles.logModalBody}>
