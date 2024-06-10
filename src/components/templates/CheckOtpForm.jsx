@@ -42,15 +42,27 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
   }
 
   return (
-    <form onSubmit={submitHandler} className={styles.form}>
-      <h4>ورود به حساب کاربری</h4>
-      <p>کد تأیید را وارد کنید</p>
-      <label htmlFor="inputCode">کد پیامک‌شده به شمارۀ {mobile} .را وارد کنید</label>
-      <input type="number" id="inputCode" placeholder="کد را وارد کنید" value={code} onChange={e => setCode(e.target.value)} />
-      <button onClick={() => setStep(1)}>تغییر شمارهٔ موبایل</button>
-      <button onClick={() => sendCode} className={styles.resindCode}>درخواست مجدد کد تایید</button>
-      <button type="submit">ورود</button>
-    </form>
+    <di className={styles.logModal}>
+      <header className={styles.logModalHeader}>
+        <h4 className="log-modal_title-box">ورود به حساب کاربری</h4>
+        <button className="log-modal_close-button">X</button>
+      </header>
+      <div className={styles.logModalContants}>
+        <div>
+          <form onSubmit={submitHandler} className={styles.form}>
+            <p>کد تأیید را وارد کنید</p>
+            <label htmlFor="inputCode">کد پیامک‌شده به شمارۀ {mobile} .را وارد کنید</label>
+            <input type="number" id="inputCode" placeholder="کد را وارد کنید" value={code} onChange={e => setCode(e.target.value)} />
+          </form>
+        </div>
+        <div className={styles.footer}>
+          <button onClick={() => setStep(1)} className={styles.changePhone}>تغییر شمارهٔ موبایل</button>
+        </div>
+        <div className={styles.footerBody}>
+          <button onClick={sendCode} className={styles.resindCode}>درخواست مجدد کد تایید</button>
+          <button onClick={submitHandler} className={styles.logIn}>ورود</button>        </div>
+      </div>
+    </di>
   )
 }
 
