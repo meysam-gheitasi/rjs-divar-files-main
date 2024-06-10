@@ -45,7 +45,9 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
     <di className={styles.logModal}>
       <header className={styles.logModalHeader}>
         <h4 className="log-modal_title-box">ورود به حساب کاربری</h4>
-        <button className="log-modal_close-button">X</button>
+        <button className="log-modal_close-button">
+        <a href="/">X</a>
+        </button>
       </header>
       <div className={styles.logModalContants}>
         <div>
