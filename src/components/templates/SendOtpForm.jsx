@@ -19,13 +19,13 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
         } else {
             toast('!مشکلی پیش امده است!')
         }
-
     }
+
     return (
         <div className={styles.logModal} >
             <header className={styles.logModalHeader}>
                 <div className="log-modal_title-box">ورود به حساب کاربری</div>
-                <button className="log-modal_close-button">icon</button>
+                <button className="log-modal_close-button">X</button>
             </header>
             <div className={styles.logModalContants}>
                 <div className={styles.logModalBody}>
@@ -36,6 +36,7 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
                         <p className={styles.authContentMessage}>
                             .برای استفاده از امکانات دیوار، لطفاً شمارهٔ موبایل خود را وارد کنید. کد تأیید به این شماره پیامک خواهد شد
                         </p>
+
                         <form onSubmit={submitHandler} className={styles.form}>
                             <div className={styles.formInput}>
                                 <input type="number" id="inputNumber" placeholder="شماره موبایل" value={mobile} onChange={e => setMobile(p2e(e.target.value))} />
