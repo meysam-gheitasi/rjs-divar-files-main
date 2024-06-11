@@ -17,7 +17,6 @@ function CategoryList() {
        }
     }
 
-    console.log(data, isLoading);
     return (
         <div>{data ? data.data.map(item => <div key={item._id}>
             <h5>{item.name}</h5>
