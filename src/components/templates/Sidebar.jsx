@@ -4,6 +4,12 @@ import styles from './Sidebar.module.css'
 // eslint-disable-next-line react/prop-types
 function Sidebar({ categories }) {
 
+    const categoryHandler = (e) => {
+        const { tagName } = e.target
+        
+        if(tagName !== 'H5') return
+        console.log(tagName)
+    }
 
 
     return (
@@ -12,7 +18,7 @@ function Sidebar({ categories }) {
             <ul>
                  {/* eslint-disable-next-line react/prop-types */}
                 {categories.data.map(item => (
-                    <li key={item._id}>
+                    <li key={item._id} onClick={categoryHandler}>
                         <img src={`${item.icon}.svg`} alt={`${item.name}`} />
                         <p>{item.name}</p>
                     </li>
