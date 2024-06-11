@@ -4,6 +4,7 @@
 }
 
 .sidebar li {
+    cursor: pointer;
     display: flex;
     margin: 20px 0;
 }
