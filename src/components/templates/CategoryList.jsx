@@ -17,11 +17,18 @@ function CategoryList() {
         }
     }
 
+    const categoryHandler = (e) => {
+        const { tagName } = e.target
+        
+        if(tagName !== 'H5') return
+        console.log(tagName)
+    }
+
     console.log(data, isLoading);
     return (
         <div>
             <ul>
-                {data ? data.data.map(item => <li key={item._id}>
+                {data ? data.data.map(item => <li key={item._id} onClick={categoryHandler}>
 
                     <h5>{item.name}</h5>
                     <p>{item.slug}</p>
