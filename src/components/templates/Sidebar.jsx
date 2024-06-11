@@ -7,7 +7,7 @@ function Sidebar({ categories }) {
     const categoryHandler = (e) => {
         const { tagName } = e.target
         
-        if(tagName !== 'H5') return
+        if(tagName !== 'P') return
         console.log(tagName)
     }
 
@@ -15,10 +15,10 @@ function Sidebar({ categories }) {
     return (
         <div className={styles.sidebar}>
             <h4>تمام دسته بندی ها</h4>
-            <ul>
+            <ul onClick={categoryHandler}>
                  {/* eslint-disable-next-line react/prop-types */}
                 {categories.data.map(item => (
-                    <li key={item._id} onClick={categoryHandler}>
+                    <li key={item._id}>
                         <img src={`${item.icon}.svg`} alt={`${item.name}`} />
                         <p>{item.name}</p>
                     </li>
