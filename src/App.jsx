@@ -5,6 +5,7 @@ import defaultOptions from "./configs/reactQuery";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Layout from "./layouts/Layout";
 import { Toaster } from "react-hot-toast";
+import ProductsProvider from "./context/ProductsProvider";
 
 
 function App() {
@@ -13,13 +14,15 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Layout>
-          <Router />
-          <Toaster />
-        </Layout>
-      </BrowserRouter>
-      <ReactQueryDevtools />
+      <ProductsProvider>
+        <BrowserRouter>
+          <Layout>
+            <Router />
+            <Toaster />
+          </Layout>
+        </BrowserRouter>
+        <ReactQueryDevtools />
+      </ProductsProvider>
     </QueryClientProvider>
   )
 }
