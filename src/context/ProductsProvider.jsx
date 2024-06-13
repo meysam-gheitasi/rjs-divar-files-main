@@ -1,21 +1,29 @@
-import { createContext, useState } from "react"
+import { createContext, useContext, useState } from "react"
 
+const ProductsContext = createContext()
 
 function ProductsProvider({ children }) {
 
-    const ProductsProvider = createContext()
-
-    const [search, setSerach] = useState("")
+    const [search, setSearch] = useState("")
 
     const [displayed, setDisplayed] = useState([])
 
-    const { query, setQuery } = useState({})
+    const [query, setQuery] = useState({})
 
     return (
-        <ProductsProvider.Provider value={{search, setSerach, displayed, setDisplayed, query, setQuery}} >
+        <ProductsContext.Provider value={{ search, setSearch, displayed, setDisplayed, query, setQuery }} >
             {children}
-        </ProductsProvider.Provider>
+        </ProductsContext.Provider>
     )
 }
 
+const useValue = () => {
+    const context = useContext(ProductsContext);
+    if (context === undefined) {
+        throw new Error('useValue must be used within a ProductsProvider');
+    }
+    return context;
+}
+
 export default ProductsProvider
+export { useValue }
