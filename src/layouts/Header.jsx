@@ -29,7 +29,7 @@ function Header() {
         </a>
       </button>
       <div className={styles.searchBox}>
-        <input value={search} onChange={e => setSearch(e.target.value.toLowerCase())} type="text" name="" id="" placeholder='جستجو در همهً آگهی ها' />
+        <input value={search} onChange={e => setSearch(e.target.value.toLowerCase().trim())} type="text" placeholder='جستجو در همهً آگهی ها' />
         <img src="../public/assets/search.svg" alt="search" />
       </div>
       <button className={styles.svgIcon}>
