@@ -24,7 +24,10 @@ function Header() {
           <img src="../public/assets/caret-down.svg" alt="caret-down" />
         </a>
       </button>
-      <Searchbox />
+      <div className={styles.searchBox}>
+        <input type="text" name="" id="" placeholder='جستجو در همهً آگهی ها' />
+        <img src="../public/assets/search.svg" alt="search" />
+      </div>
       <button className={styles.svgIcon}>
         <a href="/dashboard">
           <img src="../public/assets/user.svg" alt="user" />
@@ -58,7 +61,7 @@ function Header() {
         </a>
       </button>
       <div className={styles.advertBtn}>
-        <button  className={styles.formBtn}>
+        <button className={styles.formBtn}>
           <a href="/registrationAD">
             ثبت آگهی
           </a>
