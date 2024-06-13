@@ -3,7 +3,14 @@ import styles from './Header.module.css'
 
 function Header() {
 
-  const { search, setSearch } = useValue()
+  const { search, setSearch, query, setQuery } = useValue()
+
+  const searchHandler = (e) => {
+    setSearch(e.target.value.toLowerCase().trim())
+    setQuery((query) => ({ ...query, search }))
+  }
+
+  console.log(query)
 
 
   return (
@@ -29,7 +36,7 @@ function Header() {
         </a>
       </button>
       <div className={styles.searchBox}>
-        <input value={search} onChange={e => setSearch(e.target.value.toLowerCase().trim())} type="text" placeholder='جستجو در همهً آگهی ها' />
+        <input value={search} onChange={searchHandler} type="text" placeholder='جستجو در همهً آگهی ها' />
         <img src="../public/assets/search.svg" alt="search" />
       </div>
       <button className={styles.svgIcon}>
