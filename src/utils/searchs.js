@@ -1,10 +1,10 @@
-const searchProducts = (data, search) => {
+const searchInPosts = (data, search) => {
 
     if (!search) return data
 
-    const searchProducts = data.filter(item => item.title.toLowerCase().includes(search))
+    const searchPosts = data.filter(item => item.title.toLowerCase().includes(search))
 
-    return searchProducts
+    return searchPosts
 }
 
-export { searchProducts }
+export { searchInPosts }
