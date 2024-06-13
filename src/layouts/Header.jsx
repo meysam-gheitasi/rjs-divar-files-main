@@ -1,5 +1,4 @@
 import styles from './Header.module.css'
-import Searchbox from './Searchbox'
 
 function Header() {
   return (
