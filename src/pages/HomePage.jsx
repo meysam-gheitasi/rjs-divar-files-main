@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
+import { useEffect, useState } from "react"
 import Loader from "src/components/modules/Loader"
 import Main from "src/components/templates/Main"
 import Sidebar from "src/components/templates/Sidebar"
@@ -12,15 +13,19 @@ function HomePage() {
   const { data: categories, isLoading: categoriesLoading } = useQuery(['get-categories'], getCategories)
   const { data: allPosts, isLoading: postsLoading } = useQuery(['get-all-posts'], getAllPosts)
 
+  const [ displayed, setDisplayed ] = useState([])
+
+  useEffect(() =>  {setDisplayed(allPosts)}, [allPosts])
+
   return (
     <>
-      {categoriesLoading || postsLoading 
+      {categoriesLoading || postsLoading || !!displayed.length
       ?
       <Loader />
       :
         <div style={container}>
           <Sidebar categories={categories} />
-          <Main allPosts={allPosts} />
+          <Main allPosts={displayed} />
         </div>
       }
     </>

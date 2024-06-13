@@ -5,10 +5,13 @@ import styles from './Sidebar.module.css'
 function Sidebar({ categories }) {
 
     const categoryHandler = (e) => {
+
         const { tagName } = e.target
+
+        const category = e.target.innerText.toLowerCase()
         
         if(tagName !== 'P') return
-        console.log(tagName)
+        console.log(category)
     }
 
 
