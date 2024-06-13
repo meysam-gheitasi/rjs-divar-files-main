@@ -10,9 +10,6 @@ function Header() {
     setQuery((query) => ({ ...query, search }))
   }
 
-  console.log(query)
-
-
   return (
     <div className={styles.container}>
       <a className={styles.btn} href="/">
