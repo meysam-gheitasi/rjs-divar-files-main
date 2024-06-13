@@ -1,8 +1,11 @@
 
+import { useValue } from 'src/context/ProductsProvider'
 import styles from './Sidebar.module.css'
 
 // eslint-disable-next-line react/prop-types
 function Sidebar({ categories }) {
+
+    const { query, setQuery } = useValue()
 
     const categoryHandler = (e) => {
 
@@ -11,10 +14,11 @@ function Sidebar({ categories }) {
         const category = e.target.innerText.toLowerCase()
         
         if(tagName !== 'P') return
-        console.log(category)
+        
+        setQuery((query) => ({...query, category}))
     }
 
-
+ 
     return (
         <div className={styles.sidebar}>
             <h4>تمام دسته بندی ها</h4>
