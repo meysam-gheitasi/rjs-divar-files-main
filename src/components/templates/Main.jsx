@@ -11,7 +11,7 @@ function Main({ allPosts }) {
         <div className={styles.container}>
             {
                 // eslint-disable-next-line react/prop-types
-                allPosts.data.posts.map(item => (
+                allPosts.map(item => (
                     <div key={item._id} className={styles.card}>
                         <div className={styles.body}>
                             <p>{item.options?.title}</p>
