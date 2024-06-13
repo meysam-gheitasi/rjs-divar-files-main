@@ -1,6 +1,11 @@
+import { useValue } from 'src/context/ProductsProvider'
 import styles from './Header.module.css'
 
 function Header() {
+
+  const { search, setSearch } = useValue()
+
+
   return (
     <div className={styles.container}>
       <a className={styles.btn} href="/">
@@ -24,7 +29,7 @@ function Header() {
         </a>
       </button>
       <div className={styles.searchBox}>
-        <input type="text" name="" id="" placeholder='جستجو در همهً آگهی ها' />
+        <input value={search} onChange={e => setSearch(e.target.value.toLowerCase())} type="text" name="" id="" placeholder='جستجو در همهً آگهی ها' />
         <img src="../public/assets/search.svg" alt="search" />
       </div>
       <button className={styles.svgIcon}>
