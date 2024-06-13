@@ -9,23 +9,22 @@ function Sidebar({ categories }) {
 
     const categoryHandler = (e) => {
 
-        const { tagName } = e.target
+        const liElement = e.target.closest('li')
 
-        const category = e.target.innerText.toLowerCase()
-        
-        if(tagName !== 'P') return
-        
-        setQuery((query) => ({...query, category}))
+        if (liElement) {
+            const category = liElement.getAttribute('data-id')
+            setQuery((query) => ({ ...query, category }))
+        }
     }
 
- 
+
     return (
         <div className={styles.sidebar}>
             <h4>تمام دسته بندی ها</h4>
             <ul onClick={categoryHandler}>
-                 {/* eslint-disable-next-line react/prop-types */}
+                {/* eslint-disable-next-line react/prop-types */}
                 {categories.data.map(item => (
-                    <li key={item._id}>
+                    <li key={item._id} data-id={item._id}>
                         <img src={`${item.icon}.svg`} alt={`${item.name}`} />
                         <p>{item.name}</p>
                     </li>
