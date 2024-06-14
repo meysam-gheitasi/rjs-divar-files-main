@@ -6,7 +6,7 @@ import Sidebar from "src/components/templates/Sidebar"
 import { useValue } from "src/context/ProductsProvider"
 import { getCategories } from "src/services/admin"
 import { getAllPosts } from "src/services/user"
-import { searchInPosts } from "src/utils/searchs"
+import { filterPosts, searchInPosts } from "src/utils/searchs"
 
 const container = { display: 'flex' }
 
@@ -22,6 +22,8 @@ function HomePage() {
   useEffect(() => { 
     setDisplayed(allPosts) 
     let finalPosts = searchInPosts(allPosts?.data?.posts, query.search)
+    finalPosts = filterPosts(finalPosts, query.category)
+
     setDisplayed(finalPosts)
 
   }, [allPosts, displayed, query])
