@@ -7,4 +7,10 @@ const searchInPosts = (data, search) => {
     return searchPosts
 }
 
-export { searchInPosts }
+const filterPosts = (data, category) => {
+    if(!category) return data
+    const filterByCategory = data.filter(item => item.category === category)
+    return filterByCategory
+}
+
+export { searchInPosts, filterPosts }
