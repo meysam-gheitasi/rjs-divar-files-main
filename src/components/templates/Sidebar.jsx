@@ -9,19 +9,24 @@ function Sidebar({ categories }) {
 
     const categoryHandler = (e) => {
 
-        const liElement = e.target.closest('li')
+        const liElementLI = e.target.closest('li')
 
-        if (liElement) {
-            const category = liElement.getAttribute('data-id')
+        const liElementH4 = e.target.closest('h4')
+
+        if (liElementLI) {
+            const category = liElementLI.getAttribute('data-id')
             setQuery((query) => ({ ...query, category }))
+        }
+        else if (liElementH4) {
+            setQuery({})
         }
     }
 
 
     return (
-        <div className={styles.sidebar}>
+        <div onClick={categoryHandler} className={styles.sidebar}>
             <h4>تمام دسته بندی ها</h4>
-            <ul onClick={categoryHandler}>
+            <ul>
                 {/* eslint-disable-next-line react/prop-types */}
                 {categories.data.map(item => (
                     <li key={item._id} data-id={item._id}>

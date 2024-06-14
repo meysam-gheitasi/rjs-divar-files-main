@@ -3,6 +3,10 @@
     margin-top: 30px;
 }
 
+.sidebar h4 {
+    cursor: pointer;
+}
+
 .sidebar li {
     cursor: pointer;
     display: flex;
