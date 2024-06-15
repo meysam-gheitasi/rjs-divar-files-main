@@ -1,16 +1,29 @@
 .sidebar {
     width: 300px;
     margin-top: 30px;
+    overflow-y: auto;
 }
 
 .sidebar h4 {
+    padding: 10px 12px;
     cursor: pointer;
+    transition:  background-color  .5s;
+}
+
+.sidebar h4:hover {
+    background-color: rgb(246, 246, 246)
 }
 
 .sidebar li {
+    padding: 10px 12px;
     cursor: pointer;
     display: flex;
     margin: 20px 0;
+    transition:  background-color  .5s;
+}
+
+.sidebar li:hover {
+    background-color: rgb(246, 246, 246)
 }
 
 .sidebar p {
