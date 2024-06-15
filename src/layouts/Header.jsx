@@ -1,5 +1,6 @@
 import { useValue } from 'src/context/ProductsProvider'
 import styles from './Header.module.css'
+import { createQueryObject } from 'src/utils/searchs'
 
 function Header() {
 
