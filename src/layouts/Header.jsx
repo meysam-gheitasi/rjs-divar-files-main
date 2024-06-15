@@ -7,7 +7,7 @@ function Header() {
 
   const searchHandler = (e) => {
     setSearch(e.target.value.toLowerCase().trim())
-    setQuery((query) => ({ ...query, search }))
+    setQuery((query) => createQueryObject(query, { search }))
   }
 
   return (
