@@ -8,9 +8,21 @@ const searchInPosts = (data, search) => {
 }
 
 const filterPosts = (data, category) => {
-    if(!category) return data
+    if (!category) return data
     const filterByCategory = data.filter(item => item.category === category)
     return filterByCategory
 }
 
-export { searchInPosts, filterPosts }
+const createQueryObject = (currentQuery, newQuery) => {
+    if (newQuery.category === '') {
+        const { category, ...rest } = currentQuery
+        return rest
+    }
+    if (newQuery.search === '') {
+        const { search, ...rest } = currentQuery
+        return rest
+    }
+    return { ...currentQuery, ...newQuery }
+}
+
+export { searchInPosts, filterPosts, createQueryObject }
