@@ -28,6 +28,7 @@ function HomePage() {
 
   useEffect(() => { 
     setDisplayed(allPosts) 
+    setSearchParams(query)
     let finalPosts = searchInPosts(allPosts?.data?.posts, query.search)
     finalPosts = filterPosts(finalPosts, query.category)
 
