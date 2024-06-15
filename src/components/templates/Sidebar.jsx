@@ -1,6 +1,7 @@
 
 import { useValue } from 'src/context/ProductsProvider'
 import styles from './Sidebar.module.css'
+import { createQueryObject } from 'src/utils/searchs'
 
 // eslint-disable-next-line react/prop-types
 function Sidebar({ categories }) {
@@ -15,7 +16,7 @@ function Sidebar({ categories }) {
 
         if (liElementLI) {
             const category = liElementLI.getAttribute('data-id')
-            setQuery((query) => ({ ...query, category }))
+            setQuery((query) => createQueryObject(query, { category }))
         }
         else if (liElementH4) {
             setQuery({})
