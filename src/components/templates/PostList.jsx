@@ -3,6 +3,8 @@ import { getPosts } from "src/services/user";
 import Loader from "../modules/Loader";
 import { sp } from "src/utils/nombers";
 
+import styles from "./PostList.module.css"
+
 function PostList() {
 
   const baseURL = import.meta.env.VITE_BASE_URL;
@@ -10,7 +12,7 @@ function PostList() {
   const { data, isLoading } = useQuery(["my-post-list"], getPosts);
  
   return (
-    <div>
+    <div className={styles.list}>
       {
         isLoading
           ? (
@@ -20,7 +22,7 @@ function PostList() {
               <h3>آگهی های شما</h3>
               {
                 data.data.posts.map((item) => (
-                  <div key={item._id}>
+                  <div key={item._id} className={styles.post}>
                     {item.images?.[0] && (
                       <img src={`${baseURL}${item.images[0]}`} alt="" />
                     )}
@@ -28,7 +30,7 @@ function PostList() {
                         <p>{item.options?.title}</p>
                         <span>{item.options?.content}</span>
                     </div>
-                    <div>
+                    <div className={styles.price}>
                       <p>{new Date(item.createdAt).toLocaleDateString("fa-Ir")}</p>
                       <span>{sp(item.amount)} تومان</span>
                     </div>
