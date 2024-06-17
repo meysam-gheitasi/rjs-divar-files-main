@@ -39,6 +39,8 @@
     border-radius: 4px;
     color: #fff;
     transition:  background-color .5s;
+    cursor: pointer;
+    font-size: .8rem;
 }
 
 .list button:hover {
