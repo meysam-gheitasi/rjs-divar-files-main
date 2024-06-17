@@ -6,6 +6,8 @@ import toast from "react-hot-toast"
 import { getCategories } from "src/services/admin"
 import { getCookie } from "src/utils/cookies"
 
+import styles from "./AddForm.module.css"
+
 function AddForm() {
 
     const [form, setForm] = useState({ title: '', content: '', amount: null, city: '', category: '', images: null })
@@ -48,7 +50,7 @@ function AddForm() {
 
     return (
         <div>
-            <form onSubmit={submitHandler} onChange={changeHandler}>
+            <form onSubmit={submitHandler} onChange={changeHandler} className={styles.form}>
                 <h3>افزودن آگهی</h3>
                 <label htmlFor="title">عنوان</label>
                 <input type="text" name="title" id="title" />
